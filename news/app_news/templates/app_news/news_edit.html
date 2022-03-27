@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+{% static "" as staticUrl %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="{{ staticUrl }}news_app/css/global-style.css">
+    <title>Edit {{ news.id }}</title>
+</head>
+<body>
+<h2>Редактируйте новость:</h2>
+
+<div>
+{#Это очень важно!!!#}
+
+    <form action="{% url 'news_edit' news_id=news.id %}"
+          method="POST">
+        {% csrf_token %}
+        <table>
+            {{ edit_form.as_table }}
+        </table>
+        <input type="submit" name="main_form" value="Submit"/>
+    </form>
+</div>
+{#У кнопок имена!!#}
+<div>
+    <form action="{% url 'news_edit' news_id=news.id %}"
+          method="POST"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ upload_files_form.as_table }}
+        </table>
+        <input type="submit" name="image_form" value="Submit"/>
+    </form>
+</div>
+<p>
+    <a href="{% url 'index' %}">На главную</a>
+</p>
+
+</body>
+</html>

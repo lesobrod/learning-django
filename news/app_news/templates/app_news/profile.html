@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+{% static "" as staticUrl %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="{{ staticUrl }}news_app/css/global-style.css">
+    <title>Profile</title>
+</head>
+<body>
+<h2>Профиль: </h2>
+{% if is_verified %}
+{{ request.user.username }}, отредактируйте профиль:
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="Update">
+</form>
+
+{% else %}
+{{ request.user.username }}, вы не авторизованы! <br>
+Направьте модератору запрос на авторизацию
+<p>
+    <button type="button">Запрос</button>
+</p>
+{% endif %}
+<p>
+    <a href="{% url 'index' %}">На главную</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-21 13:37+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+
+#: .\app_news\models.py:9
+msgid "username"
+msgstr "ник"
+
+#: .\app_news\models.py:10
+msgid "first_name"
+msgstr "имя"
+
+#: .\app_news\models.py:11
+msgid "last_name"
+msgstr "фамилия"
+
+#: .\app_news\models.py:12
+msgid "city"
+msgstr "город"
+
+#: .\app_news\models.py:13
+msgid "phone"
+msgstr "телефон"
+
+#: .\app_news\models.py:23
+msgid "draft"
+msgstr "черновик"
+
+#: .\app_news\models.py:24
+msgid "archive"
+msgstr "архив"
+
+#: .\app_news\models.py:25
+msgid "post"
+msgstr "пост"
+
+#: .\app_news\models.py:27
+msgid "title"
+msgstr "название"
+
+#: .\app_news\models.py:29
+msgid "author"
+msgstr "автор"
+
+#: .\app_news\models.py:30
+msgid "description"
+msgstr "описание"
+
+#: .\app_news\models.py:31
+msgid "created_at"
+msgstr "создано"
+
+#: .\app_news\models.py:32
+msgid "updated_at"
+msgstr "изменено"
+
+#: .\app_news\models.py:33
+msgid "tag"
+msgstr "тэг"
+
+#: .\app_news\models.py:34
+msgid "status"
+msgstr "статус"
+
+#: .\app_news\models.py:35
+msgid "admin_comment"
+msgstr "комент админа"
+
+#: .\app_news\models.py:36
+msgid "age_rate"
+msgstr "возрастной ценз"

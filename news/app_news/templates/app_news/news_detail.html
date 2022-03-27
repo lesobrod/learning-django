@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+{% static "" as staticUrl %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="{{ staticUrl }}news_app/css/global-style.css">
+    <title>{{ news.id }}</title>
+</head>
+<body>
+<h2>{{ news.title }}</h2>
+
+<p class="description">
+    {{ news.description }}
+</p>
+
+    {% for pic in pictures %}
+        <img src="{{ pic.images.url }}" alt="Image for news" width="200" height="300">
+    {% empty %}
+        <p></p>
+    {% endfor %}
+
+
+{% for comment in comments %}
+    <div class="comment-head">
+        {{ comment.author }} написал:<br>
+        <p class="comment-body">{{ comment.text }}</p>
+    </div>
+{% empty %}
+    <p class="comment">Каментов нет</p>
+{% endfor %}
+
+<h4>Добавьте комментарий:</h4>
+
+{#Это очень важно!!!#}
+<div>
+    <form action="{% url 'news_detail' news_id=news.id %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ comment_form.as_table }}
+        </table>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+<p>
+    <a href="{% url 'index' %}">На главную</a>
+</p>
+
+</body>
+</html>

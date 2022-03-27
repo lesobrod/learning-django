@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+{% static "" as staticUrl %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="{{ staticUrl }}news_app/css/global-style.css">
+    <title>Upload</title>
+</head>
+<body>
+<h2>Загрузите новости</h2>
+
+<div>
+    <form action="{% url 'news_upload' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ upload_form.as_p }}
+        </table>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+
+<p>
+    <a href="{% url 'index' %}">На главную</a>
+</p>
+
+</body>
+</html>

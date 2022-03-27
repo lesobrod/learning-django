@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% load  cache %}
+{% static "" as staticUrl %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="{{ staticUrl }}news_app/css/global-style.css">
+    <title>Main</title>
+</head>
+<body>
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}"/>
+    <select name="language">
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go"/>
+</form>
+
+<h2>{% trans "Новости! " %}</h2>
+<h4><a href="{% url 'start' %}">{% trans "Правила сайта" %}</a></h4>
+{% if request.user.is_authenticated %}
+    <h3 style="display: inline;">{% trans "Добро пожаловать" %}, {{ request.user.first_name }} ! </h3>
+    <a href="{% url 'logout' %}"> {% trans "Выйти" %} </a>
+    <a href="{% url 'profile' request.user.id %}"> {% trans "Профиль" %} </a>
+{% else %}
+    <h3 style="display: inline;">{% trans "Вы не авторизованы!" %}</h3>
+    <a style="display: inline;" href="{% url 'login' %}">{% trans "Войти" %}</a>
+    <a href="{% url 'register' %}">{% trans "Регистрация" %}</a>
+{% endif %}
+
+
+<p>
+    <table>
+        <tr>
+            <td style="text-align:center">
+                <b>{% trans "Новость" %}</b>
+            </td>
+            <td style="text-align:center">
+                <b>{% trans "Дата" %}</b>
+            </td>
+            <td style="text-align:center">
+                <b>{% trans "Активность" %}</b>
+
+            </td>
+            <td style="text-align:center">
+                <b>{% trans "Редакция" %}</b>
+
+            </td>
+        </tr>
+
+        {% cache 500 all_news %}
+            {% for news in all_news %}
+                <tr>
+                    <td>
+                        <a href="{% url 'news_detail' news_id=news.id %}">
+                            {{ news.title }}</a>
+                    </td>
+                    <td>
+                        {{ news.created_at }}
+                    </td>
+                    <td>
+                        {{ news.get_status_display }}
+                    </td>
+                    <td>
+                        {% if is_verified %}
+                            <a href="{% url 'news_edit' news_id=news.id %}">
+                                {% trans 'Редактировать' %}
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <p>{% trans "Сегодня новостей нет" %}</p>
+            {% endfor %}
+        {% endcache %}
+
+</table>
+</p>
+{% if is_verified %}
+    <h4><a href="{% url 'news_create' %}">{% trans "Создайте" %}</a></h4>
+    <h4><a href="{% url 'news_upload' %}">{% trans "или загрузите новость" %}</a></h4>
+{% else %}
+    <h4>{% trans "Вы не можете публиковать новости" %}</h4>
+{% endif %}
+
+</body>
+</html>

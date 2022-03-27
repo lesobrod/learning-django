@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-21 13:31+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\app_news\templates\app_news\index.html:32
+msgid "Новости! "
+msgstr "Great News!"
+
+#: .\app_news\templates\app_news\index.html:33
+msgid "Правила сайта"
+msgstr "Site rules"
+
+#: .\app_news\templates\app_news\index.html:35
+msgid "Добро пожаловать"
+msgstr "Welcome"
+
+#: .\app_news\templates\app_news\index.html:36
+msgid "Выйти"
+msgstr "Log out"
+
+#: .\app_news\templates\app_news\index.html:37
+msgid "Профиль"
+msgstr "Profile"
+
+#: .\app_news\templates\app_news\index.html:39
+msgid "Вы не авторизованы!"
+msgstr "You are not authorized!"
+
+#: .\app_news\templates\app_news\index.html:40
+msgid "Войти"
+msgstr "Log in"
+
+#: .\app_news\templates\app_news\index.html:41
+msgid "Регистрация"
+msgstr "Registration"
+
+#: .\app_news\templates\app_news\index.html:49
+msgid "Новость"
+msgstr "News"
+
+#: .\app_news\templates\app_news\index.html:52
+msgid "Дата"
+msgstr "Date"
+
+#: .\app_news\templates\app_news\index.html:55
+msgid "Активность"
+msgstr "Activity"
+
+#: .\app_news\templates\app_news\index.html:59
+msgid "Редакция"
+msgstr "Edits"
+
+#: .\app_news\templates\app_news\index.html:80
+msgid "Редактировать"
+msgstr "Edit"
+
+#: .\app_news\templates\app_news\index.html:86
+msgid "Сегодня новостей нет"
+msgstr "No news today"
+
+#: .\app_news\templates\app_news\index.html:93
+msgid "Создайте"
+msgstr "Create"
+
+#: .\app_news\templates\app_news\index.html:94
+msgid "или загрузите новость"
+msgstr "or upload news"
+
+#: .\app_news\templates\app_news\index.html:96
+msgid "Вы не можете публиковать новости"
+msgstr "You can't post"

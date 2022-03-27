@@ -1,0 +1,80 @@
+[
+  {
+    "model": "app_news.news",
+    "pk": 1,
+    "fields": {
+      "title": "Все плохо",
+      "description": "Все плохо",
+      "created_at": "2021-02-01 01:01",
+      "updated_at": "2021-03-01 01:01",
+      "status": "1"
+    }
+  },
+  {
+    "model": "app_news.news",
+    "pk": 2,
+    "fields": {
+      "title": "Все хорошо",
+      "description": "Все хорошо",
+      "created_at": "2021-03-01 01:01",
+      "updated_at": "2021-04-01 01:01",
+      "status": "2"
+    }
+  },
+  {
+    "model": "app_news.news",
+    "pk": 3,
+    "fields": {
+      "title": "Ничего не понятно",
+      "description": "Ничего не понятно",
+      "created_at": "2021-04-01 01:01",
+      "updated_at": "2021-05-01 01:01",
+      "status": "3"
+    }
+  },
+  {
+    "model": "app_news.comment",
+    "pk": 1,
+    "fields": {
+      "author": "Икари",
+      "text": "Согласен",
+      "news": "1"
+    }
+  },
+  {
+    "model": "app_news.comment",
+    "pk": 2,
+    "fields": {
+      "author": "Гендо",
+      "text": "А я нет, может быть еще хуже!",
+      "news": "1"
+    }
+  },
+  {
+    "model": "app_news.comment",
+    "pk": 3,
+    "fields": {
+      "author": "Гендо",
+      "text": "Не согласен",
+      "news": "2"
+    }
+  },
+  {
+    "model": "app_news.comment",
+    "pk": 4,
+    "fields": {
+      "author": "Аска",
+      "text": "Смешно!",
+      "news": "3"
+    }
+  },
+  {
+    "model": "app_news.comment",
+    "pk": 5,
+    "fields": {
+      "author": "Харухи",
+      "text": "Кто вы вообще такие?",
+      "news": "3"
+    }
+  }
+]
