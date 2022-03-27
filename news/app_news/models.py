@@ -34,7 +34,6 @@ class News(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='d', verbose_name=gt('status'))
     admin_comment = models.CharField(max_length=200, default='', verbose_name=gt('admin_comment'))
     age_rate = models.CharField(max_length=5, default='', verbose_name=gt('age_rate'))
-    # image = models.FileField(upload_to='media/', blank=True, null=True)
 
     class Meta:
         ordering = ['created_at']
@@ -47,8 +46,6 @@ class NewsImage(models.Model):
     news = models.ForeignKey(News, default=None, on_delete=models.CASCADE)
     images = models.FileField(upload_to = 'media/')
 
-    def __str__(self):
-        return self.news.title
 
 
 class Comment(models.Model):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 13:37+0300\n"
+"POT-Creation-Date: 2022-03-27 12:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,71 +20,121 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: .\app_news\templates\app_news\index.html:32
+msgid "Новости! "
+msgstr ""
 
-#: .\app_news\models.py:9
-msgid "username"
-msgstr "ник"
+#: .\app_news\templates\app_news\index.html:33
+msgid "Правила сайта"
+msgstr ""
 
-#: .\app_news\models.py:10
-msgid "first_name"
-msgstr "имя"
+#: .\app_news\templates\app_news\index.html:35
+msgid "Добро пожаловать"
+msgstr ""
 
-#: .\app_news\models.py:11
-msgid "last_name"
-msgstr "фамилия"
+#: .\app_news\templates\app_news\index.html:36
+msgid "Выйти"
+msgstr ""
 
-#: .\app_news\models.py:12
-msgid "city"
-msgstr "город"
+#: .\app_news\templates\app_news\index.html:37
+msgid "Профиль"
+msgstr ""
 
-#: .\app_news\models.py:13
-msgid "phone"
-msgstr "телефон"
+#: .\app_news\templates\app_news\index.html:39
+msgid "Вы не авторизованы!"
+msgstr ""
 
-#: .\app_news\models.py:23
-msgid "draft"
-msgstr "черновик"
+#: .\app_news\templates\app_news\index.html:40
+msgid "Войти"
+msgstr ""
 
-#: .\app_news\models.py:24
-msgid "archive"
-msgstr "архив"
+#: .\app_news\templates\app_news\index.html:41
+msgid "Регистрация"
+msgstr ""
 
-#: .\app_news\models.py:25
-msgid "post"
-msgstr "пост"
+#: .\app_news\templates\app_news\index.html:49
+msgid "Новость"
+msgstr ""
 
-#: .\app_news\models.py:27
-msgid "title"
-msgstr "название"
+#: .\app_news\templates\app_news\index.html:52
+msgid "Дата"
+msgstr ""
 
-#: .\app_news\models.py:29
-msgid "author"
-msgstr "автор"
+#: .\app_news\templates\app_news\index.html:55
+msgid "Активность"
+msgstr ""
 
-#: .\app_news\models.py:30
-msgid "description"
-msgstr "описание"
+#: .\app_news\templates\app_news\index.html:59
+msgid "Редакция"
+msgstr ""
 
-#: .\app_news\models.py:31
-msgid "created_at"
-msgstr "создано"
+#: .\app_news\templates\app_news\index.html:80
+msgid "Редактировать"
+msgstr ""
 
-#: .\app_news\models.py:32
-msgid "updated_at"
-msgstr "изменено"
+#: .\app_news\templates\app_news\index.html:86
+msgid "Сегодня новостей нет"
+msgstr ""
 
-#: .\app_news\models.py:33
-msgid "tag"
-msgstr "тэг"
+#: .\app_news\templates\app_news\index.html:93
+msgid "Создайте"
+msgstr ""
 
-#: .\app_news\models.py:34
-msgid "status"
-msgstr "статус"
+#: .\app_news\templates\app_news\index.html:94
+msgid "или загрузите новость"
+msgstr ""
 
-#: .\app_news\models.py:35
-msgid "admin_comment"
-msgstr "комент админа"
+#: .\app_news\templates\app_news\index.html:96
+msgid "Вы не можете публиковать новости"
+msgstr ""
 
-#: .\app_news\models.py:36
-msgid "age_rate"
-msgstr "возрастной ценз"
+#~ msgid "username"
+#~ msgstr "ник"
+
+#~ msgid "first_name"
+#~ msgstr "имя"
+
+#~ msgid "last_name"
+#~ msgstr "фамилия"
+
+#~ msgid "city"
+#~ msgstr "город"
+
+#~ msgid "phone"
+#~ msgstr "телефон"
+
+#~ msgid "draft"
+#~ msgstr "черновик"
+
+#~ msgid "archive"
+#~ msgstr "архив"
+
+#~ msgid "post"
+#~ msgstr "пост"
+
+#~ msgid "title"
+#~ msgstr "название"
+
+#~ msgid "author"
+#~ msgstr "автор"
+
+#~ msgid "description"
+#~ msgstr "описание"
+
+#~ msgid "created_at"
+#~ msgstr "создано"
+
+#~ msgid "updated_at"
+#~ msgstr "изменено"
+
+#~ msgid "tag"
+#~ msgstr "тэг"
+
+#~ msgid "status"
+#~ msgstr "статус"
+
+#~ msgid "admin_comment"
+#~ msgstr "комент админа"
+
+#~ msgid "age_rate"
+#~ msgstr "возрастной ценз"

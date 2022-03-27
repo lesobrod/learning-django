@@ -4,10 +4,11 @@
     "pk": 1,
     "fields": {
       "title": "Все плохо",
+      "author": "1",
       "description": "Все плохо",
       "created_at": "2021-02-01 01:01",
       "updated_at": "2021-03-01 01:01",
-      "status": "1"
+      "status": "p"
     }
   },
   {
@@ -15,10 +16,11 @@
     "pk": 2,
     "fields": {
       "title": "Все хорошо",
+      "author": "2",
       "description": "Все хорошо",
       "created_at": "2021-03-01 01:01",
       "updated_at": "2021-04-01 01:01",
-      "status": "2"
+      "status": "d"
     }
   },
   {
@@ -26,10 +28,11 @@
     "pk": 3,
     "fields": {
       "title": "Ничего не понятно",
+      "author": "3",
       "description": "Ничего не понятно",
       "created_at": "2021-04-01 01:01",
       "updated_at": "2021-05-01 01:01",
-      "status": "3"
+      "status": "d"
     }
   },
   {
@@ -37,6 +40,7 @@
     "pk": 1,
     "fields": {
       "author": "Икари",
+      "user": "3",
       "text": "Согласен",
       "news": "1"
     }
@@ -46,6 +50,7 @@
     "pk": 2,
     "fields": {
       "author": "Гендо",
+      "user": "2",
       "text": "А я нет, может быть еще хуже!",
       "news": "1"
     }
@@ -55,6 +60,7 @@
     "pk": 3,
     "fields": {
       "author": "Гендо",
+      "user": "2",
       "text": "Не согласен",
       "news": "2"
     }
@@ -64,6 +70,7 @@
     "pk": 4,
     "fields": {
       "author": "Аска",
+      "user": "2",
       "text": "Смешно!",
       "news": "3"
     }
@@ -73,8 +80,86 @@
     "pk": 5,
     "fields": {
       "author": "Харухи",
+      "user": "4",
       "text": "Кто вы вообще такие?",
       "news": "3"
+    }
+  },
+  {
+    "model": "app_news.profile",
+    "pk": 1,
+    "fields": {
+      "user": "1",
+      "username": "denis",
+      "is_verified": "True"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "gendo",
+      "password": "password"
+    }
+  },
+  {
+    "model": "app_news.profile",
+    "pk": 2,
+    "fields": {
+      "user": "2",
+      "username": "gendo",
+      "is_verified": "True"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "username": "ikari",
+      "password": "password"
+    }
+  },
+  {
+    "model": "app_news.profile",
+    "pk": 3,
+    "fields": {
+      "user": "3",
+      "username": "ikari",
+      "is_verified": "True"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "username": "asuka",
+      "password": "password"
+    }
+  },
+  {
+    "model": "app_news.profile",
+    "pk": 4,
+    "fields": {
+      "user": "4",
+      "username": "asuka",
+      "is_verified": "True"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "username": "haruhi",
+      "password": "password"
+    }
+  },
+  {
+    "model": "app_news.profile",
+    "pk": 5,
+    "fields": {
+      "user": "5",
+      "username": "haruhi",
+      "is_verified": "False"
     }
   }
 ]
