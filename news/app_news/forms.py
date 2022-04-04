@@ -11,6 +11,9 @@ class CommentForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'text': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
+            'author': forms.HiddenInput(),
+            'user': forms.HiddenInput(),
+            'news': forms.HiddenInput(),
         }
 
 

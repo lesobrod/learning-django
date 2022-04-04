@@ -26,11 +26,11 @@ class NewsListView(ListView):
         # Кнопки создания и редактирования новости отображаются только для авторизованных
         # Это поле is_verified в Profile
         # Но если у пользователя нет профиля, будет ошибка
-        try:
-            user_profile = Profile.objects.get(user_id=self.request.user.id)
-            context['is_verified'] = user_profile.is_verified
-        except Profile.DoesNotExist:
-            context['is_verified'] = False
+
+        user_profile = Profile.objects.filter(user_id=self.request.user.id).first()
+        if user_profile:
+            context['profile'] = user_profile
+
         return context
 
 
@@ -41,19 +41,14 @@ class NewsDetailView(TemplateView):
     def post(self, request, *args, **kwargs):
         comment_form = CommentForm(request.POST)
         context = self.get_context_data(**kwargs)
-        obj = comment_form.save(commit=False)
         if comment_form.is_valid():
-            if request.user.is_authenticated:
-                obj.user = request.user
-                obj.author = request.user.username
-            else:
-                obj.author += ' (Аноним)'
-
-            obj.save()
+            comment_form.save()
 
         return super(TemplateView, self).render_to_response(context)
 
+
     def get_context_data(self, **kwargs):
+        user_profile = Profile.objects.filter(user_id=self.request.user.id).first()
         context = super(NewsDetailView, self).get_context_data(**kwargs)
         # Получаем объект новости
         current_news = News.objects.get(id=kwargs['news_id'])
@@ -67,15 +62,20 @@ class NewsDetailView(TemplateView):
 
         # Получаем все каменты к ней
         context['comments'] = Comment.objects.all().filter(news=kwargs['news_id'])
-        # Индекс новости камента совпадает с индексом данной новости
-        comment_form = CommentForm(initial={'news': kwargs['news_id']})
-        # Поэтому просто убираем выбор новости
-        comment_form.fields['news'].widget = forms.HiddenInput()
-        comment_form.fields['user'].widget = forms.HiddenInput()
+        # Гости не могут оставлять каменты
         if self.request.user.is_authenticated:
-            comment_form.fields['author'].widget = forms.HiddenInput()
+            # Заполняем поле Автор
+            if user_profile.is_verified:
+                # Если юзер верифицирован
+                author = user_profile.first_name
+            else:
+                # Если юзер авторизован, но не верифицирован
+                author = self.request.user + ' (Аноним)'
+            # Индекс новости камента совпадает с индексом данной новости
+            comment_form = CommentForm(initial={'news': kwargs['news_id'],
+                                                'author': author})
+            context['comment_form'] = comment_form
 
-        context['comment_form'] = comment_form
         return context
 
 
@@ -190,6 +190,7 @@ class NewsUploadView(TemplateView):
         if upload_form.is_valid():
             upload_news = upload_form.cleaned_data['file_field'].read()
             obj = create_form.save(commit=False)
+            # TODO более реально!!
             obj.title = 'Test'
             obj.description = upload_news.decode('utf-8')
             obj.save()

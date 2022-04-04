@@ -11,7 +11,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=50, default='', verbose_name=gt('last_name'))
     city = models.CharField(max_length=50, default='', verbose_name=gt('city'))
     phone = models.CharField(max_length=30, default='', verbose_name=gt('phone'))
-    is_verified = models.BooleanField()
+    is_verified = models.BooleanField(default=False)
     news_count = models.IntegerField(default=0)
 
     def __str__(self):
@@ -45,7 +45,6 @@ class News(models.Model):
 class NewsImage(models.Model):
     news = models.ForeignKey(News, default=None, on_delete=models.CASCADE)
     images = models.FileField(upload_to = 'media/')
-
 
 
 class Comment(models.Model):

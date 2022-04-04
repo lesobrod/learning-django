@@ -15,7 +15,7 @@
 - Через админку (минимально)
 - Через пустую миграцию и параметр operations
 
-python manage.py createsuperuser  
+`python manage.py createsuperuser  `
 denis 1234  
 
 После импорта фикстур можно создать пароли через тесты.  
@@ -26,3 +26,10 @@ https://mlocati.github.io/articles/gettext-iconv-windows.html
 `python manage.py  makemessages -l ru`  
 `python manage.py  makemessages -l en`  
 `python manage.py  compilemessages`
+### Структура сайта
+#### Юзеры
+1. Неавторизованный (гость): может только читать
+2. Авторизованный юзер автоматом получает профиль, где first_name - его логин,
+и может потом отредактировать. Если он не верифицирован, то идет как аноним.
+
+

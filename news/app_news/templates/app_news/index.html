@@ -32,7 +32,7 @@
 <h2>{% trans "Новости! " %}</h2>
 <h4><a href="{% url 'start' %}">{% trans "Правила сайта" %}</a></h4>
 {% if request.user.is_authenticated %}
-    <h3 style="display: inline;">{% trans "Добро пожаловать" %}, {{ request.user.first_name }} ! </h3>
+    <h3 style="display: inline;">{% trans "Добро пожаловать" %}, {{ profile.first_name }}! </h3>
     <a href="{% url 'logout' %}"> {% trans "Выйти" %} </a>
     <a href="{% url 'profile' request.user.id %}"> {% trans "Профиль" %} </a>
 {% else %}
@@ -89,7 +89,7 @@
 
 </table>
 </p>
-{% if is_verified %}
+{% if profile.is_verified %}
     <h4><a href="{% url 'news_create' %}">{% trans "Создайте" %}</a></h4>
     <h4><a href="{% url 'news_upload' %}">{% trans "или загрузите новость" %}</a></h4>
 {% else %}
