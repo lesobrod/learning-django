@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Comment, Profile
+from .models import News, Comment, Profile, NewsImage
 
 
 def truncate(text):
@@ -64,3 +64,8 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ['user',  'is_verified']
+
+
+@admin.register(NewsImage)
+class NewsImageAdmin(admin.ModelAdmin):
+    list_display = ['news', 'images']

@@ -26,13 +26,13 @@
             </option>
         {% endfor %}
     </select>
-    <input type="submit" value="Go"/>
+    <input style="height:25px; width:50px" type="submit" value="Go"/>
 </form>
 
 <h2>{% trans "Новости! " %}</h2>
 <h4><a href="{% url 'start' %}">{% trans "Правила сайта" %}</a></h4>
 {% if request.user.is_authenticated %}
-    <h3 style="display: inline;">{% trans "Добро пожаловать" %}, {{ profile.first_name }}! </h3>
+    <h3 style="display: inline;">{% trans "Добро пожаловать" %}, {{ request.user }}! </h3>
     <a href="{% url 'logout' %}"> {% trans "Выйти" %} </a>
     <a href="{% url 'profile' request.user.id %}"> {% trans "Профиль" %} </a>
 {% else %}
@@ -75,7 +75,7 @@
                         {{ news.get_status_display }}
                     </td>
                     <td>
-                        {% if is_verified %}
+                        {% if profile.is_verified %}
                             <a href="{% url 'news_edit' news_id=news.id %}">
                                 {% trans 'Редактировать' %}
                             </a>

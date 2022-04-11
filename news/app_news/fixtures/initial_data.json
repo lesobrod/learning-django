@@ -161,5 +161,21 @@
       "username": "haruhi",
       "is_verified": "False"
     }
+  },
+    {
+    "model": "app_news.newsimage",
+    "pk": 1,
+    "fields": {
+      "news": "1",
+      "images": "media/111.png"
+    }
+  },
+   {
+    "model": "app_news.newsimage",
+    "pk": 2,
+    "fields": {
+      "news": "2",
+      "images": "media/222.png"
+    }
   }
 ]
