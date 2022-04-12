@@ -11,6 +11,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=50, default='', verbose_name=gt('last_name'))
     city = models.CharField(max_length=50, default='', verbose_name=gt('city'))
     phone = models.CharField(max_length=30, default='', verbose_name=gt('phone'))
+    mail = models.EmailField(blank=True, verbose_name=gt('email') )
     is_verified = models.BooleanField(default=False)
     news_count = models.IntegerField(default=0)
 
